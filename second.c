@@ -95,16 +95,24 @@ void printMatrix(int matrix[9][9]){
   int i,j;
 
   for(i=0; i<9; i++){
+    if(i%3 == 0){
+      printf("================================\n");
+    }
     for(j=0; j<9; j++){
+      if(j == 3 || j == 6){
+        printf("|  ");
+      }
       if(j == 8){
         printf("%d\n", matrix[i][j]);
       }else{
-        printf("%d\t", matrix[i][j]);
+      printf("%d  ", matrix[i][j]);
       }
     }
   }
+  printf("================================\n\n");
   return;
 }
+
 
 int isDone(int matrix[9][9]){//will return 0 for FAIL and 1 for SUCCESS
   int i,j;
